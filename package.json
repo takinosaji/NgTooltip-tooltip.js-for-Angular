@@ -1,0 +1,37 @@
+{
+  "name": "ngtooltip",
+  "version": "1.0.0",
+  "description": "Angular wrapper for Tooltip.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint src/NgTooltip.ts",
+    "build": "npm run lint && ngc",
+    "publish": "npm publish ./dist/artifacts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takinosaji/NgTooltip-tooltip.js-for-Angular.git"
+  },
+  "keywords": [
+    "tooltipjs",
+    "angular"
+  ],
+  "author": "TakinosaJi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takinosaji/NgTooltip-tooltip.js-for-Angular/issues"
+  },
+  "homepage": "https://github.com/takinosaji/NgTooltip-tooltip.js-for-Angular#readme",
+  "dependencies": {
+    "@angular/core": "^5.0.0",
+    "tooltip.js": "^1.2.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.3",
+    "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.0.0",
+    "ts-lint": "^4.5.1",
+    "typescript": "^2.8.1"
+  }
+}
