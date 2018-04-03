@@ -2,7 +2,7 @@
   "name": "ngtooltip",
   "version": "1.0.0",
   "description": "Angular wrapper for Tooltip.js",
-  "main": "index.js",
+  "main": "./dist/artifacts/NgTooltipModule.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint src/NgTooltip.ts",
