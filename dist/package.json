@@ -2,11 +2,11 @@
   "name": "@takinosaji/ngtooltip",
   "version": "0.0.4",
   "description": "Angular wrapper for Tooltip.js",
-  "main": "./dist/artifacts/NgTooltipModule.js",
+  "main": "bundles/takinosaji-ngtooltip.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint src/*.ts",
-    "build": "ng-packagr -p ng-package.json --preserve-symlinks",
+    "build": "ng-packagr -p ng-package.json",
     "publish": "npm publish dist -access=public"
   },
   "repository": {
@@ -25,7 +25,8 @@
   "homepage": "https://github.com/takinosaji/NgTooltip-tooltip.js-for-Angular#readme",
   "dependencies": {
     "@angular/core": "5.0.0",
-    "tooltip.js": "^1.2.0"
+    "tooltip.js": "^1.2.0",
+    "tslib": "^1.7.1"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",
@@ -36,5 +37,9 @@
     "tsickle": "^0.27.2",
     "typescript": "2.8.1"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "module": "esm5/takinosaji-ngtooltip.js",
+  "es2015": "esm2015/takinosaji-ngtooltip.js",
+  "typings": "takinosaji-ngtooltip.d.ts",
+  "metadata": "takinosaji-ngtooltip.metadata.json"
 }

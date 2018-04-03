@@ -1,8 +1,8 @@
-import { Directive, ElementRef, OnDestroy, Input, AfterViewInit } from '@angular/core';
-import { Tooltip } from 'tooltip.js';
+import { Directive, ElementRef, OnDestroy, Input, AfterViewInit } from "@angular/core";
+import { Tooltip } from "tooltip.js";
 
 @Directive({
-    selector: '[ngTooltip]'
+    selector: "[ngTooltip]"
 })
 export class NgTooltipDirective implements AfterViewInit, OnDestroy {
     private _tooltip: any;
@@ -10,13 +10,13 @@ export class NgTooltipDirective implements AfterViewInit, OnDestroy {
     @Input() tooltipContent: string;
     @Input() tooltipHtml: boolean;
     @Input() tooltipTemplate: string;
-    @Input() tooltipContainer = 'body';
+    @Input() tooltipContainer = "body";
 
     constructor(private _el: ElementRef) {
     }
 
     ngAfterViewInit(): void {
-        const tooltipOptions = this.GetTooltipOptions();
+        const tooltipOptions: any = this.GetTooltipOptions();
         this._tooltip = new Tooltip(this._el.nativeElement, tooltipOptions);
     }
 
@@ -26,7 +26,7 @@ export class NgTooltipDirective implements AfterViewInit, OnDestroy {
     }
 
     private GetTooltipOptions = (): any => {
-        let options = <any>{
+        let options: any = {
             title: this.tooltipContent,
             html: this.tooltipHtml,
             container: this.tooltipContainer

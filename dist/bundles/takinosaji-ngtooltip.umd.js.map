@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "file": "takinosaji-ngtooltip.umd.js",
+  "sources": [
+    "ng://@takinosaji/ngtooltip/out/NgTooltipModule.ts",
+    "ng://@takinosaji/ngtooltip/out/NgTooltipDirective.ts"
+  ],
+  "sourcesContent": [
+    "import { NgTooltipDirective } from \"./NgTooltipDirective\";\r\nimport { NgModule } from \"@angular/core\";\r\n\r\n@NgModule({\r\n    imports: [],\r\n    exports: [NgTooltipDirective],\r\n    declarations: [NgTooltipDirective],\r\n  })\r\n  export class NgTooltipModule { }",
+    "import { Directive, ElementRef, OnDestroy, Input, AfterViewInit } from \"@angular/core\";\r\nimport { Tooltip } from \"tooltip.js\";\r\n\r\n@Directive({\r\n    selector: \"[ngTooltip]\"\r\n})\r\nexport class NgTooltipDirective implements AfterViewInit, OnDestroy {\r\n    private _tooltip: any;\r\n\r\n    @Input() tooltipContent: string;\r\n    @Input() tooltipHtml: boolean;\r\n    @Input() tooltipTemplate: string;\r\n    @Input() tooltipContainer = \"body\";\r\n\r\n    constructor(private _el: ElementRef) {\r\n    }\r\n\r\n    ngAfterViewInit(): void {\r\n        const tooltipOptions: any = this.GetTooltipOptions();\r\n        this._tooltip = new Tooltip(this._el.nativeElement, tooltipOptions);\r\n    }\r\n\r\n    ngOnDestroy(): void {\r\n        this._tooltip.dispose();\r\n        this._tooltip = null;\r\n    }\r\n\r\n    private GetTooltipOptions = (): any => {\r\n        let options: any = {\r\n            title: this.tooltipContent,\r\n            html: this.tooltipHtml,\r\n            container: this.tooltipContainer\r\n        };\r\n\r\n        if(!!this.tooltipTemplate) {\r\n            options.template = this.tooltipTemplate;\r\n        }\r\n\r\n        return options;\r\n    }\r\n}\r\n"
+  ],
+  "names": [
+    "NgModule",
+    "Input",
+    "Directive",
+    "Tooltip"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;QCcA,IAAA,KAAA,GAAA,IAAA,CAAA;QAAwB,IAAxB,CAAA,GAA2B,GAAH,GAAG,CAAY;QAFvC,IAAA,CAAA,gBAAA,GAAgC,MAAM,CAAtC;QAeA,IAAA,CAAA,iBAAA,GAAgC,YAAhC;YACQ,qBAAI,OAAO,GAAQ;gBACf,KAAK,EAAE,KAAK,CAAxB,cAAA;gBACY,IAAI,EAAE,KAAK,CAAvB,WAAA;gBACY,SAAS,EAAE,KAAK,CAA5B,gBAAA;aACS,CAAC;YAEF,IAAG,CAAC,CAAC,KAAK,CAAlB,eAAA,EAAA;gBACY,OAAO,CAAC,QAAQ,GAAG,KAAK,CAApC,eAAoD,CAApD;aACS;YAED,OAAO,OAAO,CAAC;SAClB,CAAL;KAxBK;;;;IAED,kBAAJ,CAAA,SAAA,CAAA,eAAA,GAAA,YAAA;QACQ,qBAAR,cAAA,GAAA,IAAA,CAAA,iBAAA,EAA0D,CAA1D;QACQ,IAAI,CAAC,QAAQ,GAAG,IAAIG,kBAAO,CAAC,IAAI,CAAC,GAAG,CAAC,aAAa,EAAE,cAAc,CAAC,CAAC;KACvE,CAAL;;;;IAEI,kBAAJ,CAAA,SAAA,CAAA,WAAA,GAAA,YAAA;QACQ,IAAI,CAAC,QAAQ,CAAC,OAAO,EAAE,CAAC;QACxB,IAAI,CAAC,QAAQ,GAAG,IAAI,CAAC;KACxB,CAAL;;;AAtBA,kBAAA,CAAA,UAAA,GAAA;IACA,EAAA,IAAA,EAAAD,cAAA,EAAA,IAAA,EAAA,CAAA;gBACA,QAAA,EAAA,aAAA;;;;AALA,kBAAA,CAAA,cAAA,GAAA,YAAA,EAAA,OAAA;;;AASA,kBAAA,CAAA,cAAA,GAAU;IACV,gBAAA,EAAA,CAAA,EAAA,IAAA,EAAAD,UAAA,EAAA,EAAA;IACA,aAAA,EAAA,CAAA,EAAA,IAAA,EAAAA,UAAA,EAAA,EAAU;IACV,iBAAA,EAAA,CAAA,EAAA,IAAA,EAAAA,UAAA,EAAA,EAAA;;;;;;;ADZA,IAAA,eAAA,kBAAA,YAAA;;;IAGA,OAAA,eAAA,CAAA;CACA,EAAA,CAAA,CAAA;AACA,eAAA,CAAI,UAAU,GAAd;IACA,EAAA,IAAA,EAAAD,aAAA,EAAA,IAAA,EAAgB,CAAhB;gBACA,OAAA,EAAA,EAAA;;;;;;;;;;;;;;;;;;;"
+}
