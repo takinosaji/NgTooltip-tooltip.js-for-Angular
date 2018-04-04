@@ -1,5 +1,5 @@
 import { Directive, ElementRef, OnDestroy, Input, AfterViewInit } from "@angular/core";
-import { Tooltip } from "tooltip.js";
+import Tooltip from "tooltip.js";
 
 @Directive({
     selector: "[ngTooltip]"
